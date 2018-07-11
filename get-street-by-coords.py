@@ -8,7 +8,7 @@ path_out = 'output/'
 base_url = 'http://nominatim.openstreetmap.org/reverse.php?format=json&'
 out_filename = path_out + 'enderecos' + '.csv'
 in_filename = path_in + 'coordenadas.txt'
-header_csv = 'PAIS' + ';' + 'UF' + ';' + 'CIDADE' + ';' + 'RUA' + ';' + 'CEP'
+header_csv = 'PAIS' + ';' + 'UF' + ';' + 'CIDADE' + ';' + 'RUA' + ';' + 'CEP' + ';' + 'LOCAL' + ';' + 'CONSOLIDADO'
 
 
 with open(out_filename, 'w') as output:
@@ -40,8 +40,19 @@ with open(in_filename) as coordenadas:
             cep = resposta.json()['address']['postcode']
         else:
             cep = 'CEP não encontrado'
+        
+        if 'building' in resposta.json()['address']:
+            local = resposta.json()['address']['building']
+        else:
+            local = 'Local não especificado'
 
-        line_write = pais + ';' + estado + ';' + cidade + ';' + rua + ';' + cep
+        if 'display_name' in resposta.json():
+            consolidado = resposta.json()['display_name']
+        else:
+            consolidado = 'Não encontrado'
+        
+
+        line_write = pais + ';' + estado + ';' + cidade + ';' + rua + ';' + cep + ';' + local + ';' + consolidado
 
         with open(out_filename, 'a') as output:
             output.write('\n' + line_write)
