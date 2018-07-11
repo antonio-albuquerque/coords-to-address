@@ -12,6 +12,6 @@ Script para transformar uma lista de coordenadas (latitude, longitude) em uma li
     
 * Salve o arquivo e execute o script no terminal:
     
-    `python get-street-by-coords.py`
+>`python get-street-by-coords.py`
     
 * Aguarde o fim da execução e veja os endereços obtidos em `output/enderecos.csv`
