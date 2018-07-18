@@ -75,7 +75,7 @@ with open(in_filename) as coordenadas:
         if 'city' in resposta.json()['address']:
             cidade = resposta.json()['address']['city']
         else:
-            'Cidade não reconhecida'
+            cidade = 'Cidade não reconhecida'
 
         
         if 'road' in resposta.json()['address']:
