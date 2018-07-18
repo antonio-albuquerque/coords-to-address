@@ -64,12 +64,18 @@ with open(in_filename) as coordenadas:
 
         if 'country' in resposta.json()['address']:
             pais = resposta.json()['address']['country']
+        else:
+            pais = 'País não reconhecido'
 
         if 'state' in resposta.json()['address']:
             estado = resposta.json()['address']['state']
+        else:
+            estado = 'Estado não reconhecido'
 
         if 'city' in resposta.json()['address']:
             cidade = resposta.json()['address']['city']
+        else:
+            'Cidade não reconhecida'
 
         
         if 'road' in resposta.json()['address']:
