@@ -1,5 +1,38 @@
 import requests
 
+# Print iterations progress
+def printProgressBar (iteration, total, prefix = '', suffix = '', decimals = 1, length = 100, fill = '█'):
+    """
+    Call in a loop to create terminal progress bar
+    @params:
+        iteration   - Required  : current iteration (Int)
+        total       - Required  : total iterations (Int)
+        prefix      - Optional  : prefix string (Str)
+        suffix      - Optional  : suffix string (Str)
+        decimals    - Optional  : positive number of decimals in percent complete (Int)
+        length      - Optional  : character length of bar (Int)
+        fill        - Optional  : bar fill character (Str)
+    """
+    percent = ("{0:." + str(decimals) + "f}").format(100 * (iteration / float(total)))
+    filledLength = int(length * iteration // total)
+    bar = fill * filledLength + '-' * (length - filledLength)
+    print('\r%s |%s| %s%% %s' % (prefix, bar, percent, suffix), end = '\r')
+    # Print New Line on Complete
+    if iteration == total: 
+        print()
+
+# 
+# Sample Usage
+# 
+
+# from time import sleep
+
+# # A List of Items
+# items = list(range(0, 57))
+# l = len(items)
+
+
+
 
 # Os nomes de ruas e CPFs são obtidos via Nominatim, um sistema de busca para OSM
 # Veja mais em https://nominatim.openstreetmap.org/ 
@@ -60,6 +93,7 @@ with open(in_filename) as coordenadas:
         i = i + 1
 
         print(format(((i / numero_linhas) * 100), '.4f'), '%')
+        printProgressBar(i + 1, numero_linhas, prefix = 'Progress:', suffix = 'Complete', length = 100)
         
 
         line_write = pais + ';' + estado + ';' + cidade + ';' + rua + ';' + cep + ';' + local + ';' + consolidado
@@ -67,3 +101,10 @@ with open(in_filename) as coordenadas:
         with open(out_filename, 'a') as output:
             output.write('\n' + line_write)
             
+# # Initial call to print 0% progress
+# printProgressBar(0, l, prefix = 'Progress:', suffix = 'Complete', length = 50)
+# for i, item in enumerate(items):
+#     # Do stuff...
+#     sleep(0.1)
+#     # Update Progress Bar
+    # printProgressBar(i + 1, l, prefix = 'Progress:', suffix = 'Complete', length = 50)
