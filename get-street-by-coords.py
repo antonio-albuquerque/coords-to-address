@@ -1,11 +1,13 @@
 import requests
 
+
 # Os nomes de ruas e CPFs são obtidos via Nominatim, um sistema de busca para OSM
 # Veja mais em https://nominatim.openstreetmap.org/ 
 
 path_in = 'input/'
 path_out = 'output/'
 base_url = 'http://nominatim.openstreetmap.org/reverse.php?format=json&'
+base_url_overspeed = 'http://nominatim.openstreetmap.org/api/0.6/way/'
 out_filename = path_out + 'enderecos' + '.csv'
 in_filename = path_in + 'coordenadas.txt'
 header_csv = 'PAIS' + ';' + 'UF' + ';' + 'CIDADE' + ';' + 'RUA' + ';' + 'CEP' + ';' + 'LOCAL' + ';' + 'CONSOLIDADO'
@@ -13,7 +15,11 @@ header_csv = 'PAIS' + ';' + 'UF' + ';' + 'CIDADE' + ';' + 'RUA' + ';' + 'CEP' + 
 
 with open(out_filename, 'w') as output:
     output.write(header_csv)
+    
+with open(in_filename) as f:
+    numero_linhas = sum(1 for _ in f)
 
+i = 0
 with open(in_filename) as coordenadas:
     for par_coord in coordenadas:
         latitude = par_coord.split(',')[0]
@@ -50,6 +56,10 @@ with open(in_filename) as coordenadas:
             consolidado = resposta.json()['display_name']
         else:
             consolidado = 'Não encontrado'
+        
+        i = i + 1
+
+        print(format(((i / numero_linhas) * 100), '.4f'), '%')
         
 
         line_write = pais + ';' + estado + ';' + cidade + ';' + rua + ';' + cep + ';' + local + ';' + consolidado
