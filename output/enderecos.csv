@@ -1,5 +1,11 @@
-PAIS;UF;CIDADE;RUA;CEP;LOCAL;CONSOLIDADO
-Brasil;SP;SP;Rua Apinajés;05017-040;Local não especificado;Rua Apinajés, Sumaré, Perdizes, SP, Microrregião de São Paulo, RMSP, Mesorregião Metropolitana de São Paulo, SP, Região Sudeste, 05017-040, Brasil
-Brasil;PR;SP;Rodovia Jayme Canet;86420-000;Local não especificado;Rodovia Jayme Canet, Carlópolis, Microrregião Wenceslau Braz, Mesorregião Norte Pioneiro Paranaense, PR, Região Sul, 86420-000, Brasil
-Brasil;SE;Aracaju;Rua não encontrada;49097580;Local não especificado;Jabutiana, Aracaju, Microrregião da Grande Aracaju, Mesorregião Leste Sergipano, SE, Região Nordeste, 49097580, Brasil
-Brasil;BA;SSA;Rua Rio Subaé;40425-060;Local não especificado;Rua Rio Subaé, Monte Serrat, Salvador, SSA, Microrregião de Salvador, Região Metropolitana de Salvador, Mesorregião do Recôncavo baiano, BA, Região Nordeste, 40425-060, Brasil
+ID;PAIS;UF;CIDADE;RUA;CEP;LOCAL;CONSOLIDADO
+1;Brasil;SP;SP;Rua Apinajés;05017-040;Local não especificado;Rua Apinajés, Sumaré, Perdizes, SP, Microrregião de São Paulo, RMSP, Mesorregião Metropolitana de São Paulo, SP, Região Sudeste, 05017-040, Brasil
+2;Brasil;PR;SP;Rodovia Jayme Canet;86420-000;Local não especificado;Rodovia Jayme Canet, Carlópolis, Microrregião Wenceslau Braz, Mesorregião Norte Pioneiro Paranaense, PR, Região Sul, 86420-000, Brasil
+3;Brasil;BA;SSA;Rua Rio Subaé;40425-060;Local não especificado;Rua Rio Subaé, Monte Serrat, Salvador, SSA, Microrregião de Salvador, Região Metropolitana de Salvador, Mesorregião do Recôncavo baiano, BA, Região Nordeste, 40425-060, Brasil
+4;Brasil;RS;Canoas;Rua Interna;92310-530;Local não especificado;Rua Interna, Condomínio Santo Antônio, Harmonia, Sede, Canoas, Microrregião de Porto Alegre, Região Metropolitana de Porto Alegre, Mesorregião Metropolitana de Porto Alegre, RS, Região Sul, 92310-530, Brasil
+5;Brasil;RS;Canoas;Rua Interna;92310-530;Local não especificado;Rua Interna, Condomínio Santo Antônio, Harmonia, Sede, Canoas, Microrregião de Porto Alegre, Região Metropolitana de Porto Alegre, Mesorregião Metropolitana de Porto Alegre, RS, Região Sul, 92310-530, Brasil
+6;Brasil;RN;Natal;Rua não encontrada;59060160;Local não especificado;Felipe Camarão, Região Oeste, Natal, Microrregião de Natal, Mesorregião do Leste Potiguar, RN, Região Nordeste, 59060160, Brasil
+7;Brasil;SP;SP;Rua não encontrada;05207-000;Local não especificado;Perus, SP, Microrregião de São Paulo, RMSP, Mesorregião Metropolitana de São Paulo, SP, Região Sudeste, 05207-000, Brasil
+8;Brasil;MG;SP;Rua não encontrada;CEP não encontrado;Local não especificado;Pirajuba, Microrregião Frutal, Mesorregião Triângulo Mineiro/Alto Paranaiba, MG, Região Sudeste, Brasil
+9;Brasil;BA;Barreiras;Rua não encontrada;CEP não encontrado;Local não especificado;Barauna, Barreiras, Microrregião de Barreiras, Mesorregião do Extremo Oeste Baiano, BA, Região Nordeste, Brasil
+10;Brasil;RN;Barreiras;RN-307;5957000;Local não especificado;RN-307, Passagem da Vila, Extremoz, Microrregião de Natal, Mesorregião do Leste Potiguar, RN, Região Nordeste, 5957000, Brasil

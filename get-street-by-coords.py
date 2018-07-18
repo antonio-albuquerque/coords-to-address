@@ -43,7 +43,7 @@ base_url = 'http://nominatim.openstreetmap.org/reverse.php?format=json&'
 base_url_overspeed = 'http://nominatim.openstreetmap.org/api/0.6/way/'
 out_filename = path_out + 'enderecos' + '.csv'
 in_filename = path_in + 'coordenadas.txt'
-header_csv = 'PAIS' + ';' + 'UF' + ';' + 'CIDADE' + ';' + 'RUA' + ';' + 'CEP' + ';' + 'LOCAL' + ';' + 'CONSOLIDADO'
+header_csv = 'ID' + ';' + 'PAIS' + ';' + 'UF' + ';' + 'CIDADE' + ';' + 'RUA' + ';' + 'CEP' + ';' + 'LOCAL' + ';' + 'CONSOLIDADO'
 
 
 with open(out_filename, 'w') as output:
@@ -55,8 +55,9 @@ with open(in_filename) as f:
 i = 0
 with open(in_filename) as coordenadas:
     for par_coord in coordenadas:
-        latitude = par_coord.split(',')[0]
-        longitude = par_coord.split(',')[1]
+        id = par_coord.split(',')[0]
+        latitude = par_coord.split(',')[1]
+        longitude = par_coord.split(',')[2]
 
         path = base_url + 'lat=' + latitude + '&lon=' + longitude
         resposta = requests.get(path)
@@ -96,7 +97,7 @@ with open(in_filename) as coordenadas:
         printProgressBar(i + 1, numero_linhas, prefix = 'Progress:', suffix = 'Complete', length = 100)
         
 
-        line_write = pais + ';' + estado + ';' + cidade + ';' + rua + ';' + cep + ';' + local + ';' + consolidado
+        line_write = id + ';' + pais + ';' + estado + ';' + cidade + ';' + rua + ';' + cep + ';' + local + ';' + consolidado
 
         with open(out_filename, 'a') as output:
             output.write('\n' + line_write)
