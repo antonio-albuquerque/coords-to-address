@@ -99,8 +99,8 @@ with open(in_filename) as coordenadas:
         
         i = i + 1
 
-        print(format(((i / numero_linhas) * 100), '.4f'), '%')
-        printProgressBar(i + 1, numero_linhas, prefix = 'Progress:', suffix = 'Complete', length = 100)
+        # print(format(((i / numero_linhas) * 100), '.4f'), '%')
+        printProgressBar(i + 1, numero_linhas, prefix = 'Progresso:', suffix = 'Completo', length = 100)
         
 
         line_write = id + ';' + pais + ';' + estado + ';' + cidade + ';' + rua + ';' + cep + ';' + local + ';' + consolidado
