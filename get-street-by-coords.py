@@ -1,4 +1,5 @@
 import requests
+import time
 
 # Print iterations progress
 def printProgressBar (iteration, total, prefix = '', suffix = '', decimals = 1, length = 100, fill = '█'):
@@ -61,6 +62,12 @@ with open(in_filename) as coordenadas:
 
         path = base_url + 'lat=' + latitude + '&lon=' + longitude
         resposta = requests.get(path)
+        
+        while resposta.status_code != 200:
+            
+            # time.sleep(1)
+            resposta = requests.get(path)
+
 
         if 'country' in resposta.json()['address']:
             pais = resposta.json()['address']['country']
